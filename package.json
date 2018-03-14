@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
     "npm": "^5.7.1",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "path": "^0.12.7"
   }
 }
