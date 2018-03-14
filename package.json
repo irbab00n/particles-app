@@ -1,0 +1,15 @@
+{
+  "name": "webgl-practice-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^5.7.1",
+    "particles.js": "^2.0.0"
+  }
+}
