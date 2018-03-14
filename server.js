@@ -15,7 +15,7 @@ app.get('/*', (req, res) => {
   res.sendFile(`${_public}/index.html`);
 });
 
-const port = process.ENV.port || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log('particles app listening');
