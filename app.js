@@ -1,7 +1,3 @@
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('particles.json loaded');
-});
-
 const getElementHeight = (type, target) => {
   switch(type.toLowerCase()) {
     case 'id':
@@ -16,6 +12,10 @@ const getElementHeight = (type, target) => {
 const init = () => {
 
   console.log('initializing...');
+
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('particles.json loaded');
+  });
 
   let scrollListener = () => {
     let documentHeight = getElementHeight('element', 'html');
