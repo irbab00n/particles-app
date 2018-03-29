@@ -21,14 +21,13 @@ const calculateCoefficient = (i, destination, originalGap) => {
 };
 
 const swipe = (start, destination) => {
-  clearInterval(int);
   let i = start;
   let originalGap = Math.abs(start - destination);
   if (originalGap <= 10) {
     return;
   } 
   let scrollDown = start <= destination; // True: Scroll Down, False: Scroll Up
-  var int = setInterval(() => {
+  let int = setInterval(() => {
     if (scrollDown) {
       window.scrollTo(0, i);
       i += (100 - calculateCoefficient(i, destination, originalGap)); // Incrementation based on visual testing
@@ -67,10 +66,6 @@ const buildNavTargets = (canvasHeight, contentBody, controlsBody) => {
 
   let mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  console.log('is mobile? : ', mobile);
-
-  console.log('building Nav Targets');
-
   // get the height of the content and the number of sections
 
   let contentHeight = contentBody.offsetHeight;
@@ -81,8 +76,6 @@ const buildNavTargets = (canvasHeight, contentBody, controlsBody) => {
   let rangeStart = canvasHeight;
 
   function buildButtons() {
-
-    console.log('building buttons');
 
     for (let i = 0; i < numContentSections; i++) {
 
