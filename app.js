@@ -90,7 +90,7 @@ const buildNavTargets = (canvasHeight, contentBody, controlsBody) => {
       button.classList.add('control-button');
       button.setAttribute('id', buttonId);
 
-      button.innerHTML = buttonId;
+      button.innerHTML = `Section ${i + 1}`;
 
       button.onclick = () => {
         let start = window.pageYOffset;;
