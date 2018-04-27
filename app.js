@@ -106,9 +106,23 @@ const buildNavTargets = (canvasHeight, contentBody, controlsBody) => {
 
   function buildSelect() {
 
+    function clickHandler(element, e) {
+      e = e || window.event;
+      e.preventDefault();
+      element.classList.toggle('change');
+    }
+
+    // build the entire menu container
     let menu = document.createElement('div');
     menu.classList.add('menu-container');
     menu.classList.add('no-select');
+
+    // build the menu button
+    let menuButton = document.createElement('div');
+    menuButton.classList.add('menu-button-container');
+    menuButton.classList.add('no-select');
+
+    // build the animation bars
     let bar1 = document.createElement('div');
     bar1.classList.add('bar1');
     bar1.classList.add('no-select');
@@ -119,15 +133,50 @@ const buildNavTargets = (canvasHeight, contentBody, controlsBody) => {
     bar3.classList.add('bar3');
     bar3.classList.add('no-select');
 
-    menu.append(bar1);
-    menu.append(bar2);
-    menu.append(bar3);
+    // append them in the menu button
+    menuButton.append(bar1);
+    menuButton.append(bar2);
+    menuButton.append(bar3);
 
-    let clickHandler = (element) => {
-      element.classList.toggle('change');
+    // attach the clickHandler function
+    menuButton.onclick = (e) => clickHandler(menu, e);
+
+    // append the menu button
+    menu.append(menuButton);
+
+    // create the container
+    let linkContainer = document.createElement('div');
+    linkContainer.classList.add('link-container');
+    linkContainer.classList.add('no-select');
+
+    // create a link, and append it into the container
+    for (let i = 0; i < numContentSections; i++) {
+      let link = document.createElement('div');
+      link.classList.add('menu-link');
+      link.classList.add('no-select');
+      link.style.height = `${100 / numContentSections}%`;
+
+      link.innerHTML = `Section ${i + 1}`;
+
+      let sectionHeight = contentBody.children[0].children[i].offsetHeight;
+
+      let end = rangeStart;
+
+      link.onclick = (e) => {
+        clickHandler(menu, e)
+        let start = window.pageYOffset;
+        swipe(start, end);
+      }
+
+      rangeStart += sectionHeight + 1;
+
+      linkContainer.append(link);
+
     }
 
-    menu.onclick = () => clickHandler(menu);
+
+    // append the container into the menu
+    menu.append(linkContainer);
 
     controlsBody.append(menu);
  

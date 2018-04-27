@@ -24,8 +24,8 @@ html, body, button {
 }
 
 .body-container {
-  width: 33.3vw;
-  height: 68vh;
+  width: 100vw;
+  height: 100vh;
   -webkit-transition: 0.4s ease-in;
 }
 
@@ -196,10 +196,10 @@ html, body, button {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.bg-color-white-op10:hover {
+/*.bg-color-white-op10:hover {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.3);
-}
+}*/
 
 .bg-color-white-op10:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -210,10 +210,10 @@ html, body, button {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.bg-color-white-op30:hover {
+/*.bg-color-white-op30:hover {
   color: rgba(25, 25, 25, 1.0);
   background-color: rgba(255, 255, 255, 0.8);
-}
+}*/
 
 .bg-color-white-op30:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -224,9 +224,9 @@ html, body, button {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.bg-color-white-op80:hover {
+/*.bg-color-white-op80:hover {
   background-color: rgba(255, 255, 255, 1.0);
-}
+}*/
 
 .bg-color-white-op80:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -236,11 +236,11 @@ html, body, button {
 .bg-color-white-op100 {
   background-color: rgba(255, 255, 255, 1.0);
 }
-
+/*
 .bg-color-white-op100:hover {
   color: rgba(25, 25, 25, 1.0);
   background-color: rgba(255, 255, 255, 0.8);
-}
+}*/
 
 .bg-color-white-op100:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -251,11 +251,11 @@ html, body, button {
   background-color: rgba(25, 25, 25, 0.1);
 }
 
-.bg-color-black-op10:hover {
+/*.bg-color-black-op10:hover {
   color: rgba(25, 25, 25, 1.0);
   background-color: rgba(25, 25, 25, 0.3);
 }
-
+*/
 .bg-color-black-op10:focus {
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(25, 25, 25, 0.3);
@@ -265,10 +265,10 @@ html, body, button {
   background-color: rgba(25, 25, 25, 0.3);
 }
 
-.bg-color-black-op30:hover {
+/*.bg-color-black-op30:hover {
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(25, 25, 25, 0.8);
-}
+}*/
 
 .bg-color-black-op30:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -279,10 +279,10 @@ html, body, button {
   background-color: rgba(25, 25, 25, 0.8);
 }
 
-.bg-color-black-op80:hover {
+/*.bg-color-black-op80:hover {
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(25, 25, 25, 0.8);
-}
+}*/
 
 .bg-color-black-op80:focus {
   color: rgba(255, 255, 255, 0.8);
@@ -297,12 +297,49 @@ html, body, button {
 
 
 
-
 .menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-self: flex-end;
   margin: 3vh 2vw;
   display: inline-block;
   cursor: pointer;
   z-index: 2;
+}
+
+.link-container {
+  width: 50vw;
+  height: 0vh;
+  background-color: rgba(135, 135, 145, 1.0);
+  -webkit-transition: 0.5s;
+}
+
+.change .link-container {
+  height: 50vh;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(135, 135, 145, 1.0);
+  color: rgba(235, 235, 235, 0.0);
+  -webkit-transition: 0.5s;
+}
+
+.menu-link:nth-child(even) {
+  background-color: rgba(145, 145, 155, 1.0);
+}
+
+.change .menu-link {
+  color: rgba(235, 235, 235, 1.0);
 }
 
 .bar1, .bar2, .bar3 {
